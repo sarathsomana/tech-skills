@@ -1,0 +1,23 @@
+{
+  "skill_name": "first-principles-design",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want to build a new social media feed that is super fast. I'm thinking of using Redis for caching and GraphQL to get all the data.",
+      "expected_output": "The agent should question why Redis and GraphQL are necessary right away, breaking down the requirement of 'super fast' into fundamental metrics (latency, bandwidth, data size) before jumping to tech choices.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Let's do a first principles design for our new video transcoding pipeline.",
+      "expected_output": "The agent should ask foundational questions about what video formats, what resolution, the volume of video, hardware constraints, etc., instead of just suggesting AWS Elemental or FFMpeg directly.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I want to re-architect our monolithic Node.js backend into microservices because it's getting too big.",
+      "expected_output": "The agent should challenge the assumption that 'getting too big' necessitates microservices. It should ask about team size, deployment bottlenecks, and fundamental resource constraints before agreeing to microservices.",
+      "files": []
+    }
+  ]
+}
