@@ -2,6 +2,15 @@
   "name": "skill-architect",
   "version": "1.0.0",
   "description": "A meta-skill for scaffolding and validating agentic skills.",
+  "artifact_schema": {
+    "handoff_artifacts": {
+      "required_any": [
+        "context",
+        "tradeoffs_rejected"
+      ],
+      "description": "Architecture or design handoff artifacts must preserve why decisions were made, not only what to build."
+    }
+  },
   "states": {
     "INIT": {
       "persona": "Systems Analyst",
@@ -39,6 +48,7 @@
   },
   "validation_rules": {
     "artifact_required": true,
+    "require_artifact_context_or_tradeoffs_rejected": true,
     "critic_gate_enabled": true
   }
 }

@@ -2,6 +2,15 @@
   "name": "first-principles-design",
   "version": "2.0.0",
   "description": "A phased state machine for first-principles architectural design.",
+  "artifact_schema": {
+    "handoff_artifacts": {
+      "required_any": [
+        "context",
+        "tradeoffs_rejected"
+      ],
+      "description": "Architecture artifacts must preserve why decisions were made, not only what to build."
+    }
+  },
   "states": {
     "DECONSTRUCT": {
       "persona": "The Grill Master",
@@ -43,6 +52,7 @@
   },
   "validation_rules": {
     "artifact_required": false,
+    "require_artifact_context_or_tradeoffs_rejected": true,
     "critic_gate_enabled": true
   }
 }

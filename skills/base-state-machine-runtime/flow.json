@@ -1,0 +1,168 @@
+{
+  "name": "base-state-machine-runtime",
+  "version": "1.0.0",
+  "description": "A runtime guide for creating deterministic, artifact-gated state-machine skills.",
+  "initial_state": "SELECT_TEMPLATE",
+  "terminal_state": "COMPLETE",
+  "artifact_schema": {
+    "handoff_artifacts": {
+      "required_any": [
+        "context",
+        "tradeoffs_rejected"
+      ],
+      "description": "Architecture or design handoff artifacts must preserve why decisions were made, not only what to build."
+    }
+  },
+  "states": {
+    "SELECT_TEMPLATE": {
+      "persona": "Runtime Curator",
+      "goal": "Choose the canonical state-machine templates and identify the target skill directory.",
+      "instructions": [
+        "Use templates/flow.json and templates/SKILL.md as the starter pair.",
+        "Confirm the target skill name, description, states, artifacts, and validation needs before adapting templates."
+      ],
+      "entry_criteria": [
+        "A request exists to create or standardize a phased state-machine skill."
+      ],
+      "exit_criteria": [
+        "Target skill directory and placeholder substitutions are identified."
+      ],
+      "artifacts": {
+        "read": [
+          "templates/flow.json",
+          "templates/SKILL.md"
+        ],
+        "write": []
+      },
+      "transitions": {
+        "ready": {
+          "target": "ADAPT_FLOW",
+          "condition": "Template files and target skill requirements are known."
+        }
+      }
+    },
+    "ADAPT_FLOW": {
+      "persona": "Flow Engineer",
+      "goal": "Adapt the flow template into a deterministic state graph for the target skill.",
+      "instructions": [
+        "Replace placeholders with concrete state names, transition triggers, and artifact gates.",
+        "Represent correction loops explicitly and keep completion behind a critic gate."
+      ],
+      "entry_criteria": [
+        "SELECT_TEMPLATE exit criteria are satisfied."
+      ],
+      "exit_criteria": [
+        "Target flow.json is valid JSON and every non-terminal state has an explicit transition."
+      ],
+      "artifacts": {
+        "read": [
+          "templates/flow.json"
+        ],
+        "write": [
+          "<target-skill>/flow.json"
+        ]
+      },
+      "transitions": {
+        "flow_ready": {
+          "target": "ADAPT_SKILL",
+          "condition": "The target flow defines metadata, states, artifacts, validations, and transitions."
+        },
+        "flow_invalid": {
+          "target": "ADAPT_FLOW",
+          "condition": "JSON parsing or transition review fails."
+        }
+      }
+    },
+    "ADAPT_SKILL": {
+      "persona": "Instruction Designer",
+      "goal": "Adapt the SKILL.md template into agent-facing instructions that match the flow.",
+      "instructions": [
+        "Keep SKILL.md focused on behavior and cognitive rules, not transition mechanics already encoded in flow.json.",
+        "Mirror every state from flow.json with matching persona, goal, responsibilities, and artifact expectations."
+      ],
+      "entry_criteria": [
+        "A target flow.json exists."
+      ],
+      "exit_criteria": [
+        "Target SKILL.md has valid frontmatter, runtime rules, state instructions, validation guidance, and handoff requirements."
+      ],
+      "artifacts": {
+        "read": [
+          "templates/SKILL.md",
+          "<target-skill>/flow.json"
+        ],
+        "write": [
+          "<target-skill>/SKILL.md"
+        ]
+      },
+      "transitions": {
+        "instructions_ready": {
+          "target": "CRITIC",
+          "condition": "SKILL.md mirrors the target flow and has no unresolved placeholders."
+        }
+      }
+    },
+    "CRITIC": {
+      "persona": "Runtime Auditor",
+      "goal": "Verify the target skill follows the state-machine runtime contract.",
+      "instructions": [
+        "Check JSON validity, frontmatter completeness, state coverage, artifact gates, and validation paths.",
+        "Send the work back to the relevant adaptation state if any required contract is missing."
+      ],
+      "entry_criteria": [
+        "Target flow.json and SKILL.md both exist."
+      ],
+      "exit_criteria": [
+        "The target skill is complete, deterministic, artifact-gated, and validated."
+      ],
+      "artifacts": {
+        "read": [
+          "<target-skill>/flow.json",
+          "<target-skill>/SKILL.md"
+        ],
+        "write": [
+          "<target-skill>/RUNTIME_AUDIT.md"
+        ]
+      },
+      "transitions": {
+        "flow_rework": {
+          "target": "ADAPT_FLOW",
+          "condition": "Flow graph, gates, or validation rules are incomplete."
+        },
+        "skill_rework": {
+          "target": "ADAPT_SKILL",
+          "condition": "Agent instructions do not match the flow or contain unresolved placeholders."
+        },
+        "approved": {
+          "target": "COMPLETE",
+          "condition": "Runtime audit passes."
+        }
+      }
+    },
+    "COMPLETE": {
+      "persona": "Handoff Steward",
+      "goal": "State-machine skill templates or generated skill are ready for use.",
+      "instructions": [
+        "Summarize the generated files and validation evidence."
+      ],
+      "entry_criteria": [
+        "CRITIC exit criteria are satisfied."
+      ],
+      "exit_criteria": [
+        "No unresolved runtime contract gaps remain."
+      ],
+      "artifacts": {
+        "read": [],
+        "write": []
+      },
+      "transitions": {}
+    }
+  },
+  "validation_rules": {
+    "artifact_required": true,
+    "require_artifact_context_or_tradeoffs_rejected": true,
+    "critic_gate_enabled": true,
+    "require_explicit_transitions": true,
+    "require_state_instruction_match": true
+  }
+}
