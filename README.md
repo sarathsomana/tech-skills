@@ -28,13 +28,23 @@ These skills are designed to be easily pluggable into your AI agent environment.
 
 ### 1. Installation
 
-Run the following command in your terminal to download and install all tech skills:
+Run the following command in your terminal to download and install all tech skills globally:
 
 ```bash
 curl -sL https://raw.githubusercontent.com/sarathsomana/tech-skills/main/install.sh | bash
 ```
 
 *Note: This will clone the repository to `~/.tech-skills` and create symlinks in your `~/.agents/skills/` directory. If you want to update the skills later, simply run the command again.*
+
+#### Local Installation (For Development)
+
+If you have cloned the repository and want to install the skills locally in the repository's `.agents` workspace folder, run:
+
+```bash
+./install-local.sh
+```
+
+*Note: This creates symlinks from the local `skills/` directory to `.agents/skills/` in the same directory, which is useful when testing modifications to the skills.*
 
 ### 2. Use the Skill
 
