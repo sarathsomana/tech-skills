@@ -25,6 +25,13 @@ Use artifacts as the durable source of truth between states:
 - `<artifact-2>.json`: <purpose>
 - `<artifact-3>.md`: <purpose>
 
+Architecture or design handoff artifacts must include at least one of these sections:
+
+- `context`: the constraints, principles, user goals, and evidence that explain why the design exists.
+- `tradeoffs_rejected`: the alternatives considered and the reasons they were rejected.
+
+When a Visionary-style design phase hands work to an Artisan-style implementation phase, preserve the design intent in the artifact. A handoff that only lists what to build is incomplete.
+
 If an artifact is missing or stale, update it before proceeding.
 
 ## States
@@ -103,6 +110,7 @@ Before completion, verify:
 - Every state in `flow.json` is represented in `SKILL.md`.
 - Every non-terminal state has an explicit transition.
 - Required artifacts and validation gates are complete.
+- Architecture handoff artifacts include `context` or `tradeoffs_rejected`.
 - The critic state has passed without unresolved findings.
 
 ## How To Start

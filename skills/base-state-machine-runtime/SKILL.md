@@ -49,6 +49,13 @@ Prefer explicit transition conditions over implicit prose. If a state can fail, 
 
 Artifacts are the source of truth between phases. A state may reason freely while working, but the next state must depend on written artifacts, validation results, or user decisions rather than hidden conversational context.
 
+Architecture or design handoff artifacts must include at least one of these sections:
+
+- `context`: the constraints, principles, user goals, and evidence that explain why the design exists.
+- `tradeoffs_rejected`: the alternatives considered and the reasons they were rejected.
+
+If a Visionary-style architecture phase hands work to an Artisan-style implementation phase, the handoff is incomplete unless it preserves this decision intent. Do not accept an artifact that lists only tasks, components, or implementation steps.
+
 When an artifact is incomplete:
 
 - stay in the current state,
@@ -62,6 +69,7 @@ Every complete state machine must include a final quality gate before `COMPLETE`
 - state transitions are deterministic and acyclic unless a loop has an explicit correction purpose,
 - required artifacts exist and are named consistently,
 - validation evidence matches the skill's stated acceptance criteria,
+- architecture handoff artifacts include `context` or `tradeoffs_rejected`,
 - unresolved risks are documented.
 
 ## How To Start

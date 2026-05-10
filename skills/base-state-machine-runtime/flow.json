@@ -4,6 +4,15 @@
   "description": "A runtime guide for creating deterministic, artifact-gated state-machine skills.",
   "initial_state": "SELECT_TEMPLATE",
   "terminal_state": "COMPLETE",
+  "artifact_schema": {
+    "handoff_artifacts": {
+      "required_any": [
+        "context",
+        "tradeoffs_rejected"
+      ],
+      "description": "Architecture or design handoff artifacts must preserve why decisions were made, not only what to build."
+    }
+  },
   "states": {
     "SELECT_TEMPLATE": {
       "persona": "Runtime Curator",
@@ -151,6 +160,7 @@
   },
   "validation_rules": {
     "artifact_required": true,
+    "require_artifact_context_or_tradeoffs_rejected": true,
     "critic_gate_enabled": true,
     "require_explicit_transitions": true,
     "require_state_instruction_match": true
