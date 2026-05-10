@@ -19,6 +19,8 @@ This project is built on the principle of **Phased State Machines**—moving AI 
   Interview the user relentlessly about a system design or architecture using first principles thinking. Break down assumptions to fundamental truths and build up from there.
 - **[Skill-Architect](./skills/skill-architect/)**
   A meta-skill for designing, scaffolding, and validating new agentic skills using the Phased State Machine architecture.
+- **[Base State-Machine Runtime](./skills/base-state-machine-runtime/)**
+  Standardized templates and runtime rules for creating phased state-machine skills with `flow.json` and `SKILL.md`.
 
 ## How to Install and Use
 

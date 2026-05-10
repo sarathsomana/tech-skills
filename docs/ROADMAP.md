@@ -5,7 +5,7 @@ Our goal is to build a comprehensive library of agentic skills that follow the *
 ## Phase 1: Foundation & Meta-Architecture
 *Building the machine that builds the machines.*
 - [ ] **Skill-Architect**: A meta-skill for designing, scaffolding, and testing new skills using the JSON+MD pattern.
-- [ ] **Base State-Machine Runtime**: Standardized templates for `flow.json` and `SKILL.md`.
+- [x] **Base State-Machine Runtime**: Standardized templates for `flow.json` and `SKILL.md`.
 
 ## Phase 2: Core Engineering Skills
 *Robustness and reliability for production systems.*
