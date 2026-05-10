@@ -13,30 +13,19 @@ To build a reusable and agent-agnostic set of tech skills that can be used acros
 
 ## How to Install and Use
 
-These skills are designed to be easily pluggable into your AI agent environment.
+These skills are designed to be easily pluggable into your AI agent environment. By default, the installer places skills in `~/.agents/skills/`.
 
-### 1. Clone the repository
+### 1. Installation
 
-```bash
-git clone https://github.com/sarathsomana/tech-skills.git
-cd tech-skills
-```
-
-### 2. Install a Skill
-
-To install a skill for your AI agent, you typically need to copy or symlink the skill directory to your agent's skills folder (e.g., `~/.agents/skills/` or `~/.claude/skills/`).
-
-For example, to install the `first-principles-design` skill:
+Run the following command in your terminal to download and install all tech skills:
 
 ```bash
-# Create your agent's skills directory if it doesn't exist
-mkdir -p ~/.agents/skills/
-
-# Symlink the skill (recommended for getting updates)
-ln -s $(pwd)/skills/first-principles-design ~/.agents/skills/first-principles-design
+curl -sL https://raw.githubusercontent.com/sarathsomana/tech-skills/main/install.sh | bash
 ```
 
-### 3. Use the Skill
+*Note: This will clone the repository to `~/.tech-skills` and create symlinks in your `~/.agents/skills/` directory. If you want to update the skills later, simply run the command again.*
+
+### 2. Use the Skill
 
 Once installed, you can trigger the skill by asking your AI agent. For example:
 
