@@ -2,6 +2,19 @@
 
 Our goal is to build a comprehensive library of agentic skills that follow the **Phased State Machine** architecture.
 
+## Pre-Phase 1: Architecture Refinement Checklist
+*Refining the Phased State Machine philosophy and format before building out the meta-architecture.*
+- [ ] **Artifact & Cognition**: Mandate `context`/`tradeoffs_rejected` in artifacts to prevent lossy compression.
+- [ ] **Artifact & Cognition**: Add a read-only "Scout" persona phase to generate a Context Map.
+- [ ] **Artifact & Cognition**: Route raw CLI `stderr` outputs as direct physical artifacts upon failure.
+- [ ] **State Machine Resilience**: Implement loop breakers (e.g., `max_retries: 3`) to prevent death spirals.
+- [ ] **State Machine Resilience**: Formalize Human-in-the-Loop (HITL) as a first-class `Wait-For-Human` state.
+- [ ] **State Machine Resilience**: Add environment setup/teardown hooks to state transitions.
+- [ ] **Execution Standards**: Gate state transitions on physical exit codes rather than LLM vibes.
+- [ ] **Execution Standards**: Implement graceful degradation and fail-fast for missing feature flags/MCPs.
+- [ ] **Single-File Format**: Migrate to a unified Markdown standard with YAML frontmatter (combining `flow.json` and `SKILL.md`).
+- [ ] **Single-File Format**: Enforce strict statelessness for the Markdown skill files.
+
 ## Phase 1: Foundation & Meta-Architecture
 *Building the machine that builds the machines.*
 - [ ] **Skill-Architect**: A meta-skill for designing, scaffolding, and testing new skills using the JSON+MD pattern.
