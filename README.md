@@ -6,10 +6,19 @@ Agent-agnostic tech skills for building expert software systems and AI agents.
 
 To build a reusable and agent-agnostic set of tech skills that can be used across multiple LLM agents to build expert software systems and AI agents.
 
+## Philosophy & Future
+
+This project is built on the principle of **Phased State Machines**—moving AI agents from free-form reasoning to structured, artifact-gated execution.
+
+- **[Our Philosophy](./docs/PHILOSOPHY.md)**: Learn about Composite Personas, Artifact-Gated Handovers, and the Critic State.
+- **[Development Roadmap](./docs/ROADMAP.md)**: Our 5-phase plan for building the next generation of agentic skills.
+
 ## Available Skills
 
 - **[First Principles Design](./skills/first-principles-design/)**
   Interview the user relentlessly about a system design or architecture using first principles thinking. Break down assumptions to fundamental truths and build up from there.
+- **[Skill-Architect](./skills/skill-architect/)**
+  A meta-skill for designing, scaffolding, and validating new agentic skills using the Phased State Machine architecture.
 
 ## How to Install and Use
 

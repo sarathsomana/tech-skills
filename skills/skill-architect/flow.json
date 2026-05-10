@@ -1,0 +1,44 @@
+{
+  "name": "skill-architect",
+  "version": "1.0.0",
+  "description": "A meta-skill for scaffolding and validating agentic skills.",
+  "states": {
+    "INIT": {
+      "persona": "Systems Analyst",
+      "goal": "Define the skill purpose and target agent environment.",
+      "output_artifact": "SKILL_REQUIREMENTS.md",
+      "next": "DESIGN_FLOW"
+    },
+    "DESIGN_FLOW": {
+      "persona": "Logic Engineer",
+      "goal": "Map the state machine and transition triggers.",
+      "output_artifact": "flow.json",
+      "next": "DESIGN_PERSONAS"
+    },
+    "DESIGN_PERSONAS": {
+      "persona": "Cognitive Sculptor",
+      "goal": "Draft the SKILL.md with phased instructions and personas.",
+      "output_artifact": "SKILL.md",
+      "next": "ADVERSARIAL_SIM"
+    },
+    "ADVERSARIAL_SIM": {
+      "persona": "Chaos Monkey",
+      "goal": "Simulate failures and edge cases in a mental sandbox.",
+      "output_artifact": "TEST_REPORT.md",
+      "next": "CRITIC"
+    },
+    "CRITIC": {
+      "persona": "Senior Architect",
+      "goal": "Final audit for state-drift and agent-agnosticism.",
+      "output_artifact": "FINAL_AUDIT.json",
+      "next": "COMPLETE"
+    },
+    "COMPLETE": {
+      "goal": "Skill is ready for deployment."
+    }
+  },
+  "validation_rules": {
+    "artifact_required": true,
+    "critic_gate_enabled": true
+  }
+}

@@ -2,22 +2,64 @@
   "skill_name": "first-principles-design",
   "evals": [
     {
-      "id": 1,
-      "prompt": "I want to build a new social media feed that is super fast. I'm thinking of using Redis for caching and GraphQL to get all the data.",
-      "expected_output": "The agent should question why Redis and GraphQL are necessary right away, breaking down the requirement of 'super fast' into fundamental metrics (latency, bandwidth, data size) before jumping to tech choices.",
-      "files": []
+      "id": "deconstruct_initial_choice",
+      "prompt": "I'm building a real-time collaborative editor. I'm going to use Operational Transforms (OT) and a MongoDB backend. How should I structure the schema?",
+      "expected_output": "The agent (The Grill Master) should challenge the choice of OT vs CRDT and MongoDB for real-time collaboration before answering schema questions. It should ask for the fundamental consistency and latency requirements.",
+      "assertions": [
+        {
+          "name": "Persona Adherence",
+          "instruction": "Verify the agent adopts a skeptical, analytical tone consistent with 'The Grill Master'."
+        },
+        {
+          "name": "Assumption Challenge",
+          "instruction": "Verify the agent questions the choice of MongoDB or OT rather than just accepting them."
+        },
+        {
+          "name": "Single Question Rule",
+          "instruction": "Verify the agent asks only one or two targeted foundational questions, not a list."
+        }
+      ]
     },
     {
-      "id": 2,
-      "prompt": "Let's do a first principles design for our new video transcoding pipeline.",
-      "expected_output": "The agent should ask foundational questions about what video formats, what resolution, the volume of video, hardware constraints, etc., instead of just suggesting AWS Elemental or FFMpeg directly.",
-      "files": []
+      "id": "transition_to_reconstruct",
+      "prompt": "I've analyzed the constraints: We need <50ms end-to-end latency, we have a team of 3 seniors, and we expect 10k concurrent users. We've agreed that CRDTs are too complex for our timeline and a central authority model is fine. What's the pragmatic design?",
+      "expected_output": "The agent (The Pragmatist) should acknowledge the truths (50ms, 10k users, central authority) and propose a design (e.g., WebSockets + Redis/PubSub) aligned with best practices.",
+      "assertions": [
+        {
+          "name": "Persona Transition",
+          "instruction": "Verify the agent shifts from challenging to building/proposing (The Pragmatist)."
+        },
+        {
+          "name": "Truth Alignment",
+          "instruction": "Verify the design directly addresses the 50ms latency and 10k user constraints."
+        }
+      ]
     },
     {
-      "id": 3,
-      "prompt": "I want to re-architect our monolithic Node.js backend into microservices because it's getting too big.",
-      "expected_output": "The agent should challenge the assumption that 'getting too big' necessitates microservices. It should ask about team size, deployment bottlenecks, and fundamental resource constraints before agreeing to microservices.",
-      "files": []
+      "id": "validate_loopback",
+      "prompt": "[Context: Architecture is set for a SQL-based backend]. User: 'Actually, I just read that we should use a blockchain for the audit log to make it immutable. Let's add that in.'",
+      "expected_output": "The agent (The Architect) should identify 'blockchain' as a massive new assumption/complexity and trigger a return to deconstruction (The Grill Master) to verify if immutability is a fundamental requirement that justifies the cost.",
+      "assertions": [
+        {
+          "name": "Loopback Triggered",
+          "instruction": "Verify the agent pushes back on the blockchain 'solution' and returns to questioning the underlying 'why'."
+        }
+      ]
+    },
+    {
+      "id": "sign_off_check",
+      "prompt": "The design looks solid. I agree with using a simple Postgres WAL for the audit log and the WebSocket gateway for the feed. I'm ready to start coding.",
+      "expected_output": "The agent (The Mediator) should ask for formal sign-off on the truths and architecture, and then ask if an artifact summary is needed.",
+      "assertions": [
+        {
+          "name": "Sign-off Request",
+          "instruction": "Verify the agent explicitly asks for a 'Sign-off'."
+        },
+        {
+          "name": "Artifact Offer",
+          "instruction": "Verify the agent offers to generate a design summary artifact."
+        }
+      ]
     }
   ]
 }
