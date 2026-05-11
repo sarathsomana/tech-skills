@@ -21,6 +21,8 @@ This project is built on the principle of **Phased State Machines**—moving AI 
   A meta-skill for designing, scaffolding, and validating new agentic skills using the Phased State Machine architecture.
 - **[Base State-Machine Runtime](./skills/base-state-machine-runtime/)**
   Standardized templates and runtime rules for creating phased state-machine skills with `flow.json` and `SKILL.md`.
+- **[Implementation Engineer](./skills/implementation-engineer/)**
+  A general feature builder that ingests architectural blueprints and executes phased coding, testing, and wiring of business logic.
 
 ## How to Install and Use
 
