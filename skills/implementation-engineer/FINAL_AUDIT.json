@@ -1,0 +1,49 @@
+{
+  "skill_name": "implementation-engineer",
+  "audit_date": "2026-05-11",
+  "agent_agnosticism_score": 10,
+  "state_drift_prevention_score": 10,
+  "checks": [
+    {
+      "criteria": "Flow logic is separated into YAML frontmatter.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "State transitions form a valid Directed Acyclic Graph (DAG) with explicit loopbacks.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "Artifact schema requires context or tradeoffs to preserve intent.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "Personas are clearly defined for each phase.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "The skill prevents transitioning to a new state without meeting exit conditions.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "A Critic phase or equivalent validation loop exists.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "No hardcoded assumptions about specific LLM models or capabilities.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "Markdown body contains cognitive instructions, not control flow.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "Wait-For-Human or Sign-Off states are formalized.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "Clear error handling and loop breakers are documented.",
+      "status": "PASS"
+    }
+  ],
+  "final_verdict": "APPROVED"
+}
