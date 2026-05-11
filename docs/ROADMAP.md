@@ -22,6 +22,7 @@ Our goal is to build a comprehensive library of agentic skills that follow the *
 
 ## Phase 2: Core Engineering Skills
 *Robustness and reliability for production systems.*
+- [ ] **Implementation-Engineer**: Ingests architectural blueprints and executes phased coding, testing, and wiring of business logic.
 - [ ] **Root-Cause-Isolator**: Binary-search style debugging and automated patch generation.
 - [ ] **Legacy-Modernizer**: Logic extraction from legacy code and refactoring to modern standards.
 - [ ] **Graphify (v2)**: Moving from simple visualization to a state-aware "Knowledge Graph" of the codebase.
