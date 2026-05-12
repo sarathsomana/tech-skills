@@ -15,20 +15,61 @@ This project is built on the principle of **Phased State Machines**—moving AI 
 
 ## Available Skills
 
-- **[First Principles Design](./skills/first-principles-design/)**
-  Interview the user relentlessly about a system design or architecture using first principles thinking. Break down assumptions to fundamental truths and build up from there.
+### Foundation & Meta-Architecture
 - **[Skill-Architect](./skills/skill-architect/)**
   A meta-skill for designing, scaffolding, and validating new agentic skills using the Phased State Machine architecture.
 - **[Base State-Machine Runtime](./skills/base-state-machine-runtime/)**
-  Standardized templates and runtime rules for creating phased state-machine skills with `flow.json` and `SKILL.md`.
+  Standardized templates and runtime rules for creating phased state-machine skills.
+- **[First Principles Design](./skills/first-principles-design/)**
+  Architectural deconstruction and reconstruction using first-principles thinking. Challenges assumptions until fundamental truths are reached.
+
+### Core Engineering
 - **[Implementation Engineer](./skills/implementation-engineer/)**
-  A general feature builder that ingests architectural blueprints and executes phased coding, testing, and wiring of business logic.
+  Ingests architectural blueprints and executes phased coding, testing, and wiring of business logic.
+- **[Root-Cause-Isolator](./skills/root-cause-isolator/)**
+  Binary-search style debugging and automated patch generation with artifact-gated hypothesis testing.
+- **[Legacy-Modernizer](./skills/legacy-modernizer/)**
+  Logic extraction from legacy code and incremental refactoring to modern standards with functional equivalence guarantees.
+- **[Graphify v2](./skills/graphify-v2/)**
+  State-aware knowledge graph generation for codebase semantic understanding, dependency analysis, and architectural auditing.
+
+### Visual & Experience (UX)
+- **[UX-Guardian](./skills/ux-guardian/)**
+  Aesthetic audits, CSS refactoring, and animation polishing for premium design quality.
+- **[Component-Wizard](./skills/component-wizard/)**
+  High-fidelity UI component generation from screenshots or design manifestos.
+
+### Hardening & Security
+- **[Security-Sentinel](./skills/security-sentinel/)**
+  Red-team auditing, vulnerability patching, and threat modeling for production-readiness.
+- **[Perf-Optimus](./skills/perf-optimus/)**
+  Automatic frontend and backend performance optimization with empirical before/after validation.
+- **[Test-Engineer](./skills/test-engineer/)**
+  General-purpose, domain-agnostic test strategy, authoring, execution, and failure diagnosis.
+
+### Ecosystem & Integration
+- **[Multi-Agent Orchestrator](./skills/multi-agent-orchestrator/)**
+  Task decomposition and handover logic between different agents using shared skills.
+- **[Skill-Registry](./skills/skill-registry/)**
+  Searchable index of community-contributed skills for discovery, validation, and installation.
 
 ## How to Install and Use
 
-These skills are designed to be easily pluggable into your AI agent environment. By default, the installer places skills in `~/.agents/skills/`.
+These skills are designed to be easily pluggable into your AI agent environment.
 
-### 1. Installation
+### Option A: Install via Your AI Agent (Recommended)
+
+Just paste this into your coding agent (Claude Code, Gemini CLI, Antigravity, Cursor, Windsurf, Cline, etc.):
+
+```
+Install skills from https://raw.githubusercontent.com/sarathsomana/tech-skills/main/INSTALL.md
+```
+
+The agent will read the instructions, detect your environment, and install the skills into the correct directory automatically. It supports both **global** and **project-level** installation.
+
+> See [`INSTALL.md`](./INSTALL.md) for the full agent-readable installation spec.
+
+### Option B: Install via Shell Script
 
 Run the following command in your terminal to download and install all tech skills globally:
 

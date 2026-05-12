@@ -1,0 +1,69 @@
+{
+  "skill_name": "Root-Cause-Isolator",
+  "audit_date": "2026-05-11",
+  "auditor": "CRITIC (The Senior Architect)",
+  "checks": [
+    {
+      "id": 1,
+      "name": "State Independence",
+      "status": "PASS",
+      "notes": "Skill is fully stateless. Context is preserved entirely through physical artifacts (CONTEXT_MAP.md, HYPOTHESIS_LIST.md, PATCH.md)."
+    },
+    {
+      "id": 2,
+      "name": "Artifact Gating",
+      "status": "PASS",
+      "notes": "Transitions explicitly demand artifact presence (e.g., 'condition: PATCH.md is written')."
+    },
+    {
+      "id": 3,
+      "name": "Intent Preservation",
+      "status": "PASS",
+      "notes": "Mandatory 'context' and 'tradeoffs_rejected' sections are enforced in artifacts to prevent lossy compression."
+    },
+    {
+      "id": 4,
+      "name": "Loop Breakers",
+      "status": "PASS",
+      "notes": "YAML frontmatter includes 'max_retries: 3'. Explicit Wait-For-Human fallback exists."
+    },
+    {
+      "id": 5,
+      "name": "Physical Execution Standards",
+      "status": "PASS",
+      "notes": "VALIDATOR relies on Exit Code 0, not vibe-checks, to approve patches."
+    },
+    {
+      "id": 6,
+      "name": "Single-File Format",
+      "status": "PASS",
+      "notes": "Migrated successfully. YAML frontmatter combined with Markdown body in SKILL.md."
+    },
+    {
+      "id": 7,
+      "name": "Composite Personas",
+      "status": "PASS",
+      "notes": "Clearly defined: Scout (Librarian), Pragmatist (Artisan), Critic."
+    },
+    {
+      "id": 8,
+      "name": "Graceful Degradation",
+      "status": "PASS",
+      "notes": "Uses specific tool requirements. Hitl fallback exists for failures."
+    },
+    {
+      "id": 9,
+      "name": "Separation of Concerns",
+      "status": "PASS",
+      "notes": "YAML handles routing logic; Markdown handles cognitive instructions."
+    },
+    {
+      "id": 10,
+      "name": "Agent Agnosticism",
+      "status": "PASS",
+      "notes": "No reliance on specific LLM features; strictly defined by tool requirements and filesystem state."
+    }
+  ],
+  "final_decision": "APPROVED",
+  "sign_off": "Ready for integration into Phase 2."
+}

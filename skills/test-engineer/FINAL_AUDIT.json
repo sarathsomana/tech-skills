@@ -1,0 +1,54 @@
+{
+  "skill_name": "test-engineer",
+  "audit_date": "2026-05-12",
+  "agent_agnosticism_score": 10,
+  "state_drift_prevention_score": 10,
+  "checks": [
+    {
+      "criteria": "Flow logic is separated into YAML frontmatter.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "State transitions form a valid Directed Acyclic Graph (DAG) with explicit loopbacks.",
+      "status": "PASS",
+      "notes": "DAG with controlled loops: IMPLEMENT ↔ DIAGNOSE, CRITIC → IMPLEMENT, STRATEGIZE ↔ WAIT_FOR_HUMAN_STRATEGY."
+    },
+    {
+      "criteria": "Artifact schema requires context or tradeoffs to preserve intent.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "Personas are clearly defined for each phase.",
+      "status": "PASS",
+      "notes": "6 distinct personas: Surveyor, Tactician, Test Author, Runner, Investigator, Quality Auditor."
+    },
+    {
+      "criteria": "The skill prevents transitioning to a new state without meeting exit conditions.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "A Critic phase or equivalent validation loop exists.",
+      "status": "PASS",
+      "notes": "Quality Auditor checks coverage targets, assertion quality, and test maintainability."
+    },
+    {
+      "criteria": "No hardcoded assumptions about specific LLM models or capabilities.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "Markdown body contains cognitive instructions, not control flow.",
+      "status": "PASS"
+    },
+    {
+      "criteria": "Wait-For-Human or Sign-Off states are formalized.",
+      "status": "PASS",
+      "notes": "Two WAIT_FOR_HUMAN states: strategy approval (WAIT_FOR_HUMAN_STRATEGY) and escalation (WAIT_FOR_HUMAN_GUIDANCE)."
+    },
+    {
+      "criteria": "Clear error handling and loop breakers are documented.",
+      "status": "PASS",
+      "notes": "max_retries: 3 enforced at IMPLEMENT. Environment failures escalate to human."
+    }
+  ],
+  "final_verdict": "APPROVED"
+}

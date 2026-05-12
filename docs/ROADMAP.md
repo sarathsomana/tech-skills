@@ -23,21 +23,22 @@ Our goal is to build a comprehensive library of agentic skills that follow the *
 ## Phase 2: Core Engineering Skills
 *Robustness and reliability for production systems.*
 - [x] **Implementation-Engineer**: Ingests architectural blueprints and executes phased coding, testing, and wiring of business logic.
-- [ ] **Root-Cause-Isolator**: Binary-search style debugging and automated patch generation.
-- [ ] **Legacy-Modernizer**: Logic extraction from legacy code and refactoring to modern standards.
-- [ ] **Graphify (v2)**: Moving from simple visualization to a state-aware "Knowledge Graph" of the codebase.
+- [x] **Root-Cause-Isolator**: Binary-search style debugging and automated patch generation.
+- [x] **Legacy-Modernizer**: Logic extraction from legacy code and refactoring to modern standards.
+- [x] **Graphify (v2)**: Moving from simple visualization to a state-aware "Knowledge Graph" of the codebase.
 
 ## Phase 3: Visual & Experience (UX)
 *Ensuring the "Wow" factor and premium design.*
-- [ ] **UX-Guardian**: Aesthetic audits, CSS refactoring, and animation polishing.
-- [ ] **Component-Wizard**: High-fidelity UI generation from screenshots or manifestos.
+- [x] **UX-Guardian**: Aesthetic audits, CSS refactoring, and animation polishing.
+- [x] **Component-Wizard**: High-fidelity UI generation from screenshots or manifestos.
 
 ## Phase 4: Hardening & Security
 *Production-readiness and safety.*
-- [ ] **Security-Sentinel**: Red-team auditing, vulnerability patching, and threat modeling.
-- [ ] **Perf-Optimus**: Automatic frontend and backend performance optimization.
+- [x] **Security-Sentinel**: Red-team auditing, vulnerability patching, and threat modeling.
+- [x] **Perf-Optimus**: Automatic frontend and backend performance optimization.
+- [x] **Test-Engineer**: General-purpose, domain-agnostic test strategy, authoring, execution, and failure diagnosis.
 
 ## Phase 5: Ecosystem & Integration
 *Making skills universal.*
-- [ ] **Multi-Agent Orchestrator**: Logic for handovers between different agents using shared skills.
-- [ ] **Skill-Registry**: A searchable index of community-contributed skills.
+- [x] **Multi-Agent Orchestrator**: Logic for handovers between different agents using shared skills.
+- [x] **Skill-Registry**: A searchable index of community-contributed skills.
