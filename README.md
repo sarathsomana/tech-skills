@@ -1,9 +1,9 @@
 # Tech Skills
 
-[![badge](https://shieldcn.dev/github/sarathsomana/tech-skills/license.svg?variant=ghost&theme=green&logo=ri%3ATbLicense)](./LICENSE)
-[![badge](https://shieldcn.dev/badge/Skills-14-22c55e.svg?variant=ghost&logo=lu%3AWashingMachine)](#available-skills)
+[![badge](https://shieldcn.dev/badge/Skills-14-22c55e.svg?variant=ghost&theme=green&logo=lu%3ABrain&logoColor=22c55e)](#available-skills)
 [![badge](https://shieldcn.dev/badge/Architecture-Phased%20State%20Machine-22c55e.svg?variant=ghost&logo=lu%3ASettings)](./docs/PHILOSOPHY.md)
 ![badge](https://shieldcn.dev/github/sarathsomana/tech-skills/ci.svg?variant=ghost&theme=green&logo=ri%3ATbLicense)
+[![badge](https://shieldcn.dev/github/sarathsomana/tech-skills/license.svg?variant=ghost&theme=green&logo=ri%3ATbLicense)](./LICENSE)
 
 Structured, agent-agnostic skills that turn any AI coding assistant into an expert engineering team.
 
