@@ -1,8 +1,9 @@
 # Tech Skills
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![Skills: 14](https://img.shields.io/badge/Skills-14-8A2BE2.svg)](#available-skills)
-[![Architecture: Phased State Machine](https://img.shields.io/badge/Architecture-Phased_State_Machine-E67E22.svg)](./docs/PHILOSOPHY.md)
+[![badge](https://shieldcn.dev/github/sarathsomana/tech-skills/license.svg?variant=ghost&theme=green&logo=ri%3ATbLicense)](./LICENSE)
+[![badge](https://shieldcn.dev/badge/Skills-14-22c55e.svg?variant=ghost&logo=lu%3AWashingMachine)](#available-skills)
+[![badge](https://shieldcn.dev/badge/Architecture-Phased%20State%20Machine-22c55e.svg?variant=ghost&logo=lu%3ASettings)](./docs/PHILOSOPHY.md)
+![badge](https://shieldcn.dev/github/sarathsomana/tech-skills/ci.svg?variant=ghost&theme=green&logo=ri%3ATbLicense)
 
 Structured, agent-agnostic skills that turn any AI coding assistant into an expert engineering team.
 
@@ -169,6 +170,9 @@ We welcome contributions — new skills, improvements to existing ones, and bug 
 
 - [Philosophy: Phased State Machines](./docs/PHILOSOPHY.md) — The design principles behind constrained state execution
 - [Development Roadmap](./docs/ROADMAP.md) — The 5-phase build plan for the skill library
+
+## Attributions
+- Badges from [shieldcn.dev](https://shieldcn.dev)
 
 ## License
 
