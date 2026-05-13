@@ -18,9 +18,9 @@ Most architectural decisions are based on "best practices" or "industry standard
 
 ## Core Directives
 
--   **Challenge Everything**: No "standard" is accepted without justification.
--   **Pragmatic Grounding**: Recommends standard solutions only when they are the most efficient way to satisfy a fundamental truth.
--   **One Question at a Time**: Ensures deep, focused exploration of every branch of the design.
+- **Challenge Everything**: No "standard" is accepted without justification.
+- **Pragmatic Grounding**: Recommends standard solutions only when they are the most efficient way to satisfy a fundamental truth.
+- **One Question at a Time**: Ensures deep, focused exploration of every branch of the design.
 
 ## Usage
 
@@ -28,6 +28,6 @@ Trigger this skill when you need a deep architectural review or when designing a
 
 ## Key Artifacts Produced
 
--   `SKILL_REQUIREMENTS.md`: Initial ground truth requirements.
--   `TEST_REPORT.md`: Results of adversarial simulation.
--   `FINAL_AUDIT.json`: 10-point architectural audit results.
+- `SKILL_REQUIREMENTS.md`: Initial ground truth requirements.
+- `TEST_REPORT.md`: Results of adversarial simulation.
+- `FINAL_AUDIT.json`: 10-point architectural audit results.

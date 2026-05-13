@@ -56,6 +56,8 @@ jobs:
             --exclude-mail
             --exclude 'https://img.shields.io'
             --exclude 'linkedin.com'
+            --exclude 'github.com/sarathsomana'
+            --exclude 'raw.githubusercontent.com/sarathsomana'
             --suggest
             '**/*.md'
           fail: true

@@ -13,7 +13,7 @@ Have an idea for a new skill? Awesome!
 - Submit a Pull Request!
 
 ### 2. Improving Existing Skills
-Found a typo, an edge case the AI misses, or a way to make a skill more effective? 
+Found a typo, an edge case the AI misses, or a way to make a skill more effective?
 - Submit a Pull Request updating the relevant `SKILL.md` or associated files.
 
 ### 3. Reporting Issues

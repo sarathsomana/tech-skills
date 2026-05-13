@@ -20,8 +20,8 @@ Building an effective agentic skill requires more than just a prompt. It require
 
 ## Key Files
 
--   `SKILL.md`: Contains the cognitive instructions and persona definitions.
--   `flow.json`: Defines the state machine logic and transitions.
+- `SKILL.md`: Contains the cognitive instructions and persona definitions.
+- `flow.json`: Defines the state machine logic and transitions.
 
 ## Usage
 
@@ -31,6 +31,6 @@ To start building a new skill, trigger this skill and follow the instructions. T
 
 ## Operating Principles
 
--   **Separation of Concerns**: Keep flow logic in `flow.json` and cognitive instructions in `SKILL.md`.
--   **Artifact Gating**: Transitions only occur once the current phase's artifact is written.
--   **Critic-First**: Every design choice is challenged by an internal critic before moving forward.
+- **Separation of Concerns**: Keep flow logic in `flow.json` and cognitive instructions in `SKILL.md`.
+- **Artifact Gating**: Transitions only occur once the current phase's artifact is written.
+- **Critic-First**: Every design choice is challenged by an internal critic before moving forward.

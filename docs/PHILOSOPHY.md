@@ -3,7 +3,7 @@
 This document outlines the fundamental principles behind the skills in this repository. We believe that for AI agents to become expert systems builders, they must move beyond "free-form reasoning" into "constrained state execution."
 
 ## 1. Skills as Constrained State Machines
-An agentic skill is not just a prompt; it is a **Program for Thought**. 
+An agentic skill is not just a prompt; it is a **Program for Thought**.
 - **Soft vs. Hard States**: Traditional prompting is "soft" and prone to drift. Our skills use "hard" state transitions gated by physical artifacts in the workspace.
 - **Deterministic Transitions**: A state change only occurs when specific conditions (outputs, tool results, or user approvals) are met. State transitions explicitly require physical assertions (e.g., `Exit Code 0`) rather than LLM vibes.
 
@@ -29,5 +29,6 @@ We prioritize **Self-Correction** and resilience against infinite loops:
 - **Graceful Degradation**: Skills declare their physical requirements (e.g., specific MCPs) via feature flags and fail fast with clear errors if the host runner lacks them.
 
 ## 5. The Single-File Format (Markdown Architecture)
+
 - **Unified Distributable Syntax**: Skills combine routing, requirements, and metadata in YAML Frontmatter, while cognitive personas and instructions use standard Markdown within a single `SKILL.md` file.
 - **Strict Statelessness**: The Markdown skill holds zero memory. The Host system (IDE, CLI runner) is entirely responsible for injecting the current state, artifact history, and environment variables into the prompt at runtime.
