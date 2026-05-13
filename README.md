@@ -116,10 +116,15 @@ The agent reads [INSTALL.md](./INSTALL.md), detects your environment, and create
 ### Option B: Install via Shell Script
 
 ```bash
+# Default: installs to ~/.agents/skills/
 curl -sL https://raw.githubusercontent.com/sarathsomana/tech-skills/main/install.sh | bash
+
+# Agent-specific: installs to the correct path for your agent
+curl -sL .../install.sh | bash -s -- --agent claude
+curl -sL .../install.sh | bash -s -- --agent gemini --scope project
 ```
 
-This clones the repository to `~/.tech-skills` and symlinks skills into `~/.agents/skills/`. Run the command again to update.
+Supported agents: `claude`, `gemini`, `antigravity`, `cursor`, `windsurf`, `cline`, `copilot`, `generic`. Run `install.sh --help` for all options.
 
 ### Option C: Manual Installation
 

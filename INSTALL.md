@@ -15,6 +15,7 @@ description: >
 ## Overview
 
 This file instructs you to:
+
 1. Clone (or update) the **tech-skills** repository.
 2. Symlink the requested skills into the correct discovery path for the user's coding agent.
 3. Confirm success.
@@ -68,6 +69,7 @@ Present these choices to the user in a **single prompt**. Use the defaults shown
 ## Step 3 — Clone or Update the Repository
 
 Set:
+
 ```
 REPO_URL="https://github.com/sarathsomana/tech-skills.git"
 INSTALL_DIR="$HOME/.tech-skills"
@@ -95,6 +97,7 @@ Based on the user's answers in Step 2:
 Set this as `TARGET_DIR`.
 
 Create the directory if it doesn't exist:
+
 ```bash
 mkdir -p "$TARGET_DIR"
 ```
@@ -122,6 +125,7 @@ done
 ### If installing SPECIFIC skills:
 
 For each selected skill name `$SKILL`:
+
 ```bash
 skill_dir="$INSTALL_DIR/skills/$SKILL"
 target_link="$TARGET_DIR/$SKILL"

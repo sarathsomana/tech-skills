@@ -1,0 +1,74 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-frontmatter:
+    name: YAML Frontmatter & Schema
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install validation dependencies
+        run: npm ci
+        working-directory: .github/scripts
+
+      - name: Validate skill frontmatter
+        run: node .github/scripts/validate-frontmatter.mjs
+
+  validate-structure:
+    name: Skill Structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate skill directory structure
+        run: bash .github/scripts/validate-structure.sh
+
+  check-links:
+    name: Broken Links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Check for broken links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --no-progress
+            --exclude 'https://img.shields.io'
+            --exclude 'linkedin.com'
+            --exclude 'github.com/sarathsomana'
+            --exclude 'raw.githubusercontent.com/sarathsomana'
+            --suggest
+            '**/*.md'
+          fail: true
+
+  validate-install-scripts:
+    name: Install Scripts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint shell scripts
+        uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: "."
+          additional_files: "install.sh install-local.sh"
