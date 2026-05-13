@@ -9,17 +9,67 @@ on:
       - ".github/workflows/lint-markdown.yml"
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   lint:
     name: markdownlint
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout PR branch
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          fetch-depth: 0
 
       - name: Run markdownlint
+        id: lint
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          globs: |
+            README.md
+            CONTRIBUTING.md
+            INSTALL.md
+            docs/*.md
+            skills/*/SKILL.md
+            skills/*/README.md
+        continue-on-error: true
+
+      # Fork PRs cannot push with GITHUB_TOKEN; skip fix/push so verify step fails on remaining issues.
+      - name: Auto-fix lint errors
+        if: >-
+          steps.lint.outcome == 'failure'
+          && github.event.pull_request.head.repo.full_name == github.repository
+        uses: DavidAnson/markdownlint-cli2-action@v19
+        with:
+          fix: true
+          globs: |
+            README.md
+            CONTRIBUTING.md
+            INSTALL.md
+            docs/*.md
+            skills/*/SKILL.md
+            skills/*/README.md
+
+      - name: Commit and push fixes
+        if: >-
+          steps.lint.outcome == 'failure'
+          && github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "No auto-fixable changes found."
+          else
+            git add -A
+            git commit -m "style: auto-fix markdownlint errors"
+            git push
+          fi
+
+      # Strict re-run: passes after same-repo auto-fix; fails for fork PRs or unfixable violations.
+      - name: Verify markdownlint (after auto-fix)
+        if: always() && steps.lint.outcome == 'failure'
         uses: DavidAnson/markdownlint-cli2-action@v19
         with:
           globs: |
